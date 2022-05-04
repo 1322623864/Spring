@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+    <bean id="Adderss" class="com.archegos.Address">
+        <property name="address" value="西安"/>
+    </bean>
+
+    <bean id="Student" class="com.archegos.Student">
+        <!--常量注入-->
+        <property name="address" ref="Adderss"/>
+        <property name="name" value="zzl"/>
+        <!--数组注入-->
+        <property name="books">
+            <array>
+                <value>1984</value>
+                <value>美丽新世界</value>
+                <value>我们</value>
+            </array>
+        </property>
+        <!--List注入-->
+        <property name="hobbys">
+            <list>
+                <value>阅读</value>
+                <value>思考</value>
+                <value>运动</value>
+            </list>
+        </property>
+        <!--Map注入-->
+        <property name="card">
+            <map>
+                <entry key="账号" value="794685"/>
+                <entry key="密码" value="123456"/>
+            </map>
+        </property>
+        <!--Set注入-->
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>COC</value>
+            </set>
+        </property>
+        <!--空 null注入-->
+        <property name="wife">
+            <null></null>
+        </property>
+        <!--Properties注入-->
+        <property name="info">
+            <props>
+                <prop key="学号">201921</prop>
+                <prop key="性别">男</prop>
+                <prop key="身高">180</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
